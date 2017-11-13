@@ -3,19 +3,17 @@ const Koa = require('koa');
 const router = require('./')()
 
 router.on('GET', '/test', (ctx, next) => {
-  // ctx.body = {'hello': 'world'}
-  return next()
+  ctx.body = {'hello': 'world'}
+  // return next()
 })
 
 const app = new Koa();
 
-app.use(async function (ctx, next) {
-  router.lookup(ctx, next)
-});
+app.use(router.routes());
 
-// app.use(async function (ctx, next) {
-//   ctx.body = "default"
-// });
+app.use(async function (ctx, next) {
+  ctx.body = "default"
+});
 
 const server = http.createServer(app.callback())
 

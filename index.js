@@ -183,6 +183,7 @@ Router.prototype._insert = function _insert(method, path, kind, params, handler,
   }
 }
 
+// changed
 Router.prototype.lookup = function lookup(ctx, next) {
   var req = ctx.req
   var res = ctx.res
@@ -324,11 +325,10 @@ Router.prototype.find = function find(method, path) {
   }
 }
 
+// changed
 Router.prototype._defaultRoute = function (ctx, next) {
   if (this.defaultRoute) {
     this.defaultRoute(ctx, next)
-  } else {
-    ctx.throw(404, `There is not route '${ctx.path}' matched`)
   }
 }
 
@@ -374,6 +374,14 @@ Router.prototype.connect = function (path, handler, store) {
 
 Router.prototype.all = function (path, handler, store) {
   this.on(httpMethods, path, handler, store)
+}
+
+// new
+Router.prototype.routes = function () {
+  var router = this;
+  return function (ctx, next) {
+    router.lookup(ctx, next)
+  }
 }
 
 module.exports = Router
