@@ -8,8 +8,6 @@ router.on('GET', '/test', (req, res, params) => {
   res.end('{"hello":"world"}')
 })
 
-
-
 const server = http.createServer(router.routes())
 
 server.listen(3000, err => {

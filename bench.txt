@@ -1,0 +1,31 @@
+$ autocannon 127.0.0.1:3000/test 
+Running 10s test @ http://127.0.0.1:3000/test
+10 connections
+
+Stat         Avg     Stdev   Max     
+Latency (ms) 0.08    0.32    15      
+Req/Sec      17439.6 1925.73 18575   
+Bytes/Sec    2.87 MB 339 kB  3.15 MB 
+
+174k requests in 10s, 28.6 MB read
+$ autocannon 127.0.0.1:3000/test
+Running 10s test @ http://127.0.0.1:3000/test
+10 connections
+
+Stat         Avg     Stdev   Max     
+Latency (ms) 0.2     0.47    16      
+Req/Sec      11779.1 1432.05 12463   
+Bytes/Sec    2.7 MB  328 kB  2.88 MB 
+
+130k requests in 11s, 29.7 MB read
+
+$ autocannon 127.0.0.1:3000/test
+Running 10s test @ http://127.0.0.1:3000/test
+10 connections
+
+Stat         Avg     Stdev   Max     
+Latency (ms) 0.01    0.13    11      
+Req/Sec      28456   1875.49 29631   
+Bytes/Sec    3.32 MB 208 kB  3.54 MB 
+
+313k requests in 11s, 36.6 MB read

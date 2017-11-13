@@ -2,14 +2,14 @@ const http = require('http')
 const Koa = require('koa')
 const app = new Koa()
 
-const router = require('../')()
+const router = require('koa-router')()
 // router.type = 'koa'
 
 router.get('/', (ctx, next) => {
   ctx.body = {'path': 'root'}
 })
 
-router.on('GET', '/test', (ctx, next) => {
+router.get('/test', (ctx, next) => {
   ctx.body = {'hello': 'world'}
 })
 

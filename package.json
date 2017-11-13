@@ -30,6 +30,7 @@
     "coveralls": "^2.13.1",
     "express": "^4.16.2",
     "koa": "^2.4.1",
+    "koa-router": "^7.3.0",
     "request": "^2.81.0",
     "standard": "^10.0.3",
     "tap": "^10.7.2"
