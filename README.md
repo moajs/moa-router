@@ -1,4 +1,6 @@
-# moa-router(koa support for find-my-way)
+# moa-router
+
+> a better find-my-way(support for koa/express/http)
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)  [![Build Status](https://travis-ci.org/delvedor/find-my-way.svg?branch=master)](https://travis-ci.org/delvedor/find-my-way) [![Coverage Status](https://coveralls.io/repos/github/delvedor/find-my-way/badge.svg?branch=master)](https://coveralls.io/github/delvedor/find-my-way?branch=master) [![NPM downloads](https://img.shields.io/npm/dm/find-my-way.svg?style=flat)](https://www.npmjs.com/package/find-my-way)
 
@@ -8,7 +10,7 @@ If you want to see a benchmark comparison with the most commonly used routers, s
 Do you need a real-world example that uses this router? Check out [Fastify](https://github.com/fastify/fastify).
 
 
-## performace
+## Performace
 
 1. moa-router(http) 28456 
 1. moa-router(koa) 17439.6 
