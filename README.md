@@ -23,12 +23,15 @@ QPS
 1. express-router 10374.6
 
 <a name="install"></a>
+
 ## Install
+
 ```
-npm i --save moa-router
+$ npm i --save moa-router
 ```
 
 <a name="usage"></a>
+
 ## Usage
 
 Koa
