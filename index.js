@@ -34,6 +34,8 @@ function Router(opts) {
     this.defaultRoute = opts.defaultRoute
   }
 
+  this.type = opts.type || 'express'  
+
   this.tree = new Node()
 }
 
@@ -184,14 +186,28 @@ Router.prototype._insert = function _insert(method, path, kind, params, handler,
 }
 
 // changed
-Router.prototype.lookup = function lookup(ctx, next) {
+Router.prototype.lookup_koa = function lookup(ctx, next) {
   var req = ctx.req
   var res = ctx.res
   var handle = this.find(req.method, sanitizeUrl(req.url))
-  if (!handle) return this._defaultRoute(ctx, next)
+  if (!handle) return this._defaultKoaRoute(ctx, next)
   ctx.params = handle.params
   ctx.store = handle.store
   return handle.handler(ctx, next)
+}
+
+Router.prototype.lookup_express = function lookup(req, res, next) {
+  var handle = this.find(req.method, sanitizeUrl(req.url))
+  if (!handle) return this._defaultHttpRoute(ctx, next)
+  req.params = handle.params
+  req.store = handle.store
+  return handle.handler(req, res, next)
+}
+
+Router.prototype.lookup_http = function lookup (req, res) {
+  var handle = this.find(req.method, sanitizeUrl(req.url))
+  if (!handle) return this._defaultHttpRoute(req, res)
+  return handle.handler(req, res, handle.params, handle.store)
 }
 
 Router.prototype.find = function find(method, path) {
@@ -326,9 +342,18 @@ Router.prototype.find = function find(method, path) {
 }
 
 // changed
-Router.prototype._defaultRoute = function (ctx, next) {
+Router.prototype._defaultKoaRoute = function (ctx, next) {
   if (this.defaultRoute) {
     this.defaultRoute(ctx, next)
+  }
+}
+
+Router.prototype._defaultHttpRoute = function (req, res) {
+  if (this.defaultRoute) {
+    this.defaultRoute(req, res)
+  } else {
+    res.statusCode = 404
+    res.end()
   }
 }
 
@@ -379,8 +404,18 @@ Router.prototype.all = function (path, handler, store) {
 // new
 Router.prototype.routes = function () {
   var router = this;
-  return function (ctx, next) {
-    router.lookup(ctx, next)
+  if (router.type === 'express') {
+    return function (req, res, next) {
+      router.lookup_express(req, res, next)
+    }
+  } else if (router.type === 'koa') {
+    return function (ctx, next) {
+      router.lookup_koa(ctx, next)
+    }
+  } else {
+    return function (req, res) {
+      router.lookup_http(req, res)
+    }
   }
 }
 
