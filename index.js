@@ -20,7 +20,7 @@
 
 const assert = require('assert')
 const Node = require('./node')
-const httpMethods = ['DELETE', 'GET', 'HEAD', 'PATCH', 'POST', 'PUT', 'OPTIONS', 'TRACE', 'CONNECT']
+const httpMethods = require('./methods')
 var errored = false
 
 function Router(opts) {
