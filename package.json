@@ -1,6 +1,6 @@
 {
   "name": "moa-router",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "description": "Crazy fast http radix based router",
   "main": "index.js",
   "scripts": {
