@@ -34,7 +34,7 @@ function Router(opts) {
     this.defaultRoute = opts.defaultRoute
   }
 
-  this.type = opts.type || 'express'  
+  this.type = opts.type || 'koa' // default koa  
 
   this.tree = new Node()
 }
