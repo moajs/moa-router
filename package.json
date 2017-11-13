@@ -1,0 +1,36 @@
+{
+  "name": "moa-router",
+  "version": "1.7.1",
+  "description": "Crazy fast http radix based router",
+  "main": "index.js",
+  "scripts": {
+    "bench": "node bench.js",
+    "test": "standard && tap test/*.test.js",
+    "coveralls": "tap test/*.test.js --cov --coverage-report=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delvedor/find-my-way.git"
+  },
+  "keywords": [
+    "http",
+    "router",
+    "radix",
+    "fast",
+    "speed"
+  ],
+  "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/delvedor/find-my-way/issues"
+  },
+  "homepage": "https://github.com/delvedor/find-my-way#readme",
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "coveralls": "^2.13.1",
+    "koa": "^2.4.1",
+    "request": "^2.81.0",
+    "standard": "^10.0.3",
+    "tap": "^10.7.2"
+  }
+}
