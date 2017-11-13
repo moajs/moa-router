@@ -7,6 +7,15 @@ A crazy fast HTTP router, internally uses an highly performant [Radix Tree](http
 If you want to see a benchmark comparison with the most commonly used routers, see [here](https://github.com/delvedor/router-benchmark).  
 Do you need a real-world example that uses this router? Check out [Fastify](https://github.com/fastify/fastify).
 
+
+## performace
+
+1. moa-router(http) 28456 
+1. moa-router(koa) 17439.6 
+1. koa-router 12748.73 
+1. moa-router(express) 11779.1 
+1. express-router 10374.6
+
 <a name="install"></a>
 ## Install
 ```
