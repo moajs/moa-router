@@ -72,7 +72,7 @@ const http = require('http')
 const express = require('express')
 const app = express()
 
-const router = require('../')()
+const router = require('moa-router')()
 router.type = 'express'
 
 router.get('/', (req, res, next) => {
@@ -103,7 +103,7 @@ HTTP(fastify)
 'use strict'
 
 const http = require('http')
-const router = require('../')()
+const router = require('moa-router')()
 router.type = 'http'
 
 router.on('GET', '/test', (req, res, params) => {
