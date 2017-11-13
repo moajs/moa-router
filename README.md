@@ -30,6 +30,9 @@ npm i --save moa-router
 
 <a name="usage"></a>
 ## Usage
+
+Koa
+
 ```js
 const http = require('http')
 const Koa = require('koa');
@@ -54,6 +57,59 @@ app.use(async function (ctx, next) {
 const server = http.createServer(app.callback())
 
 server.listen(3030, err => {
+  if (err) throw err
+  console.log('Server listening on: http://localhost:3000')
+})
+```
+
+Express
+
+```js
+const http = require('http')
+const express = require('express')
+const app = express()
+
+const router = require('../')()
+router.type = 'express'
+
+router.get('/', (req, res, next) => {
+  res.json({'path': 'root'}) 
+})
+
+router.on('GET', '/test', (req, res, next) => {
+  res.json({'hello': 'world'})
+})
+
+app.use(router.routes())
+
+app.use(async function (ctx, next) {
+  res.send("default")
+})
+
+const server = http.createServer(app)
+
+server.listen(3000, err => {
+  if (err) throw err
+  console.log('Server listening on: http://localhost:3000')
+})
+```
+
+HTTP(fastify)
+
+```js
+'use strict'
+
+const http = require('http')
+const router = require('../')()
+router.type = 'http'
+
+router.on('GET', '/test', (req, res, params) => {
+  res.end('{"hello":"world"}')
+})
+
+const server = http.createServer(router.routes())
+
+server.listen(3000, err => {
   if (err) throw err
   console.log('Server listening on: http://localhost:3000')
 })
