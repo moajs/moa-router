@@ -15,6 +15,9 @@
   },
   "keywords": [
     "http",
+    "koa",
+    "express",
+    "web",
     "router",
     "radix",
     "fast",
