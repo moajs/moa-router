@@ -14,12 +14,10 @@ router.get('/', (req, res, next) => {
 })
 
 router.get('/query', (req, res, next) => {
-  // console.log(ctx.query)
   res.json({ 'query': req.query })
 })
 
 router.on('GET', '/user', (req, res, next) => {
-  // console.log(ctx.store)
   res.json({
     hello: 'world',
     store: req.store

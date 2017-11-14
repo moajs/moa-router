@@ -1,6 +1,6 @@
 {
   "name": "moa-router",
-  "version": "1.7.7",
+  "version": "1.7.8",
   "description": "a better && faster router base on find-my-way(support koa/express/http).find-my-way is a Crazy fast http radix based router",
   "main": "index.js",
   "scripts": {
