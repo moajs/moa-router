@@ -298,8 +298,7 @@ console.log(findMyWay.prettyPrint())
 
 ## 版本历史
 
-- v1.1.0 实现可编程调用
-- v1.0.0 初始化版本cli,实现kp导出
+- v1.0.0 初始化版本
 
 ## 欢迎fork和反馈
 
