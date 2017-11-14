@@ -15,7 +15,7 @@ router.get('/test', (ctx, next) => {
 
 app.use(router.routes())
 
-app.use(async function (ctx, next) {
+app.use(function (ctx, next) {
   ctx.body = 'default'
 })
 
