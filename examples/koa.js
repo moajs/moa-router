@@ -9,6 +9,10 @@ router.get('/', (ctx, next) => {
   ctx.body = {'path': 'root'}
 })
 
+router.get('/:id', (ctx, next) => {
+  ctx.body = {'path': 'root'}
+})
+
 router.on('GET', '/test', (ctx, next) => {
   ctx.body = {'hello': 'world'}
 })

@@ -38,6 +38,7 @@
     "koa-router": "^7.3.0",
     "request": "^2.81.0",
     "standard": "^10.0.3",
+    "supertest": "^3.0.0",
     "tap": "^10.7.2"
   },
   "dependencies": {

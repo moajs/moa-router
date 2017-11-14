@@ -73,8 +73,11 @@ class MoaRouter extends Router {
 }
 
 module.exports = function (opts) {
+  opts = opts || {}
   if (opts && !opts.type) opts.type = 'koa'
-  return new MoaRouter(opts)
+  let router = new MoaRouter(opts)
+  router.type = opts.type
+  return router
 }
 
 function sanitizeUrl (url) {
