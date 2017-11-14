@@ -6,7 +6,7 @@ const router = require('../')()
 router.type = 'express'
 
 router.get('/', (req, res, next) => {
-  res.json({'path': 'root'}) 
+  res.json({'path': 'root'})
 })
 
 router.on('GET', '/test', (req, res, next) => {
@@ -14,10 +14,6 @@ router.on('GET', '/test', (req, res, next) => {
 })
 
 app.use(router.routes())
-
-app.use(async function (ctx, next) {
-  res.send("default")
-})
 
 const server = http.createServer(app)
 

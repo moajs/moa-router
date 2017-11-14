@@ -4,6 +4,7 @@
   "description": "Crazy fast http radix based router",
   "main": "index.js",
   "scripts": {
+    "precommit": "npm test",
     "bench": "node bench.js",
     "test": "standard && tap test/*.test.js",
     "coveralls": "tap test/*.test.js --cov --coverage-report=text-lcov | coveralls"
@@ -29,10 +30,14 @@
     "benchmark": "^2.1.4",
     "coveralls": "^2.13.1",
     "express": "^4.16.2",
+    "husky": "^0.14.3",
     "koa": "^2.4.1",
     "koa-router": "^7.3.0",
     "request": "^2.81.0",
     "standard": "^10.0.3",
     "tap": "^10.7.2"
+  },
+  "dependencies": {
+    "find-my-way": "^1.7.1"
   }
 }

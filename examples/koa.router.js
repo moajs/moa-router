@@ -16,7 +16,7 @@ router.get('/test', (ctx, next) => {
 app.use(router.routes())
 
 app.use(async function (ctx, next) {
-  ctx.body = "default"
+  ctx.body = 'default'
 })
 
 const server = http.createServer(app.callback())
