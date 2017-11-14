@@ -6,7 +6,7 @@ const Router = require('find-my-way')
 class MoaRouter extends Router {
   constructor (opts) {
     super(opts)
-    var self = this
+    let self = this
 
     httpMethods.forEach(function (method) {
       self[method] = function (path, handler, store) {
@@ -16,9 +16,9 @@ class MoaRouter extends Router {
   }
 
   lookupKoa (ctx, next) {
-    var req = ctx.req
+    let req = ctx.req
     // var res = ctx.res
-    var handle = this.find(req.method, sanitizeUrl(req.url))
+    let handle = this.find(req.method, sanitizeUrl(req.url))
     if (!handle) return this._defaultKoaRoute(ctx, next)
     ctx.params = handle.params
     ctx.store = handle.store
@@ -26,7 +26,7 @@ class MoaRouter extends Router {
   }
 
   lookupExpress (req, res, next) {
-    var handle = this.find(req.method, sanitizeUrl(req.url))
+    let handle = this.find(req.method, sanitizeUrl(req.url))
     if (!handle) return this._defaultHttpRoute(req, res)
     req.params = handle.params
     req.store = handle.store
@@ -34,7 +34,7 @@ class MoaRouter extends Router {
   }
 
   lookupHttp (req, res) {
-    var handle = this.find(req.method, sanitizeUrl(req.url))
+    let handle = this.find(req.method, sanitizeUrl(req.url))
     if (!handle) return this._defaultHttpRoute(req, res)
     return handle.handler(req, res, handle.params, handle.store)
   }
@@ -55,7 +55,7 @@ class MoaRouter extends Router {
   }
 
   routes () {
-    var router = this
+    let router = this
     if (router.type === 'express') {
       return function (req, res, next) {
         router.lookupExpress(req, res, next)
@@ -78,8 +78,8 @@ module.exports = function (opts) {
 }
 
 function sanitizeUrl (url) {
-  for (var i = 0, len = url.length; i < len; i++) {
-    var charCode = url.charCodeAt(i)
+  for (let i = 0, len = url.length; i < len; i++) {
+    let charCode = url.charCodeAt(i)
     if (charCode === 63 || charCode === 35) {
       return url.slice(0, i)
     }
