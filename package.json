@@ -4,9 +4,9 @@
   "description": "Crazy fast http radix based router",
   "main": "index.js",
   "scripts": {
-    "precommit": "npm test",
+    "precommit": "standard --fix && npm test",
     "bench": "node bench.js",
-    "test": "standard && tap test/*.test.js",
+    "test": "tap test/*.test.js",
     "coveralls": "tap test/*.test.js --cov --coverage-report=text-lcov | coveralls"
   },
   "repository": {
