@@ -1,7 +1,7 @@
 {
   "name": "moa-router",
   "version": "1.7.5",
-  "description": "Crazy fast http radix based router",
+  "description": "a better && faster router base on find-my-way(support koa/express/http).find-my-way is a Crazy fast http radix based router",
   "main": "index.js",
   "scripts": {
     "precommit": "standard --fix && npm test",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/delvedor/find-my-way.git"
+    "url": "git+https://github.com/moajs/moa-router.git"
   },
   "keywords": [
     "http",
@@ -20,12 +20,12 @@
     "fast",
     "speed"
   ],
-  "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
+  "author": "Alfred Sang - @i5ting (http://i5ting.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/delvedor/find-my-way/issues"
+    "url": "https://github.com/moajs/moa-router/issues"
   },
-  "homepage": "https://github.com/delvedor/find-my-way#readme",
+  "homepage": "https://github.com/moajs/moa-router#readme",
   "devDependencies": {
     "benchmark": "^2.1.4",
     "coveralls": "^2.13.1",
