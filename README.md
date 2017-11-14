@@ -2,7 +2,7 @@
 
 > a better && faster router base on find-my-way(support koa/express/http)
 
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)  [![Build Status](https://travis-ci.org/delvedor/find-my-way.svg?branch=master)](https://travis-ci.org/moajs/moa-router) [![Coverage Status](https://coveralls.io/repos/github/delvedor/find-my-way/badge.svg?branch=master)](https://coveralls.io/github/delvedor/find-my-way?branch=master) [![NPM downloads](https://img.shields.io/npm/dm/find-my-way.svg?style=flat)](https://www.npmjs.com/package/find-my-way)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)  [![Build Status](https://travis-ci.org/delvedor/find-my-way.svg?branch=master)](https://travis-ci.org/moajs/moa-router) [![Coverage Status](https://coveralls.io/repos/github/moajs/moa-router/badge.svg?branch=master)](https://coveralls.io/github/moajs/moa-router?branch=master) [![NPM downloads](https://img.shields.io/npm/moajs/moa-router.svg?style=flat)](https://www.npmjs.com/package/moa-router)
 
 A crazy fast HTTP router, internally uses an highly performant [Radix Tree](https://en.wikipedia.org/wiki/Radix_tree) (aka compact [Prefix Tree](https://en.wikipedia.org/wiki/Trie)), supports route params, wildcards, and it's framework independent.
 
