@@ -8,8 +8,14 @@ class MoaRouter extends Router {
     super(opts)
     let self = this
 
+    self.meta = []
     httpMethods.forEach(function (method) {
       self[method] = function (path, handler, store) {
+        self.meta.push({
+          path: path,
+          handler: handler,
+          store: store
+        })
         return self.on(method.toUpperCase(), path, handler, store)
       }
     })
